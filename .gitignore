@@ -2,3 +2,6 @@
 app/__pycache__/*
 login/__pycache__/*
 register/__pycache__/*
+app/migrations/__pycache__/*
+login/migrations/__pycache__/*
+register/migrations/__pycache__/*
