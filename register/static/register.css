@@ -44,6 +44,10 @@ button:hover{
     
 }
 
+.register-container{
+    z-index: 1;
+}
+
 .container #image:hover{
     opacity: 100%;
 }

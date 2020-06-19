@@ -11,6 +11,11 @@
     <div class="container">
         <div class="register-container">
             <form id="form1" method="POST">
+                {% for message in messages %}
+                {% if message %}
+                {{ message }}
+                {% endif %}
+                {% endfor %}
                 {% csrf_token %}
                 <h1>Register</h1>
                 <label for="firstname">Firstname: </label>
