@@ -154,3 +154,9 @@ hr{
     background-color: #cfc ;
     z-index: 1 ;
   }
+  
+#error{
+    font-size: 10px;
+    word-wrap: break-word;
+    color: red;
+}
