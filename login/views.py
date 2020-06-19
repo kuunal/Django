@@ -1,21 +1,15 @@
 from django.shortcuts import render
 from django.http import JsonResponse
-from .models import Login
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate
+from register.models import Register as r
 
 # Create your views here.
 def validate(request):
     if request.method == 'POST':
-        user = authenticate(email=request.POST['email'], password=request.POST['password'])
-        print(user,"SAdSadASDSADASs")
-        if user:
+        if r.objects.filter(email=request.POST['email']) and r.objects.filter(password=request.POST['password']):
             return JsonResponse({'success':True})
         else:
-            return JsonResponse({'success':False})
+            return render(request,'login/loginpage.html',{'messages':'Invalid id or pass'})
     else:
-        form = Login()
-        context = {
-            "form":form
-        }
-        return render(request,'login/loginpage.html', context)
+        return render(request,'login/loginpage.html')

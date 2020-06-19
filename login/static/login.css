@@ -10,6 +10,9 @@ a{
     color: blueviolet;
 }
 
+#error{
+    color: red;
+}
 button{
     margin: 2%;
     border-radius: 5px;
