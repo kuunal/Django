@@ -8,7 +8,7 @@ from register.models import Register as r
 def validate(request):
     if request.method == 'POST':
         if r.objects.filter(email=request.POST['email']) and r.objects.filter(password=request.POST['password']):
-            return JsonResponse({'success':True})
+            return JsonResponse({'success':True}) 
         else:
             return render(request,'login/loginpage.html',{'messages':'Invalid id or pass'})
     else:
